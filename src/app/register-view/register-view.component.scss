@@ -1,0 +1,29 @@
+.formContent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.register{
+    all: initial;
+    //color: rgb(71, 95, 173);
+    color: white;
+    //border-bottom: 1px solid rgb(122, 147, 226);
+    border-bottom: 1px solid white;
+    padding-top: 20px;
+}
+.register::placeholder{
+    //color: rgb(122, 147, 226);
+    color: white;
+}
+#registerIn{
+    all: initial;
+    margin-top: 20px;
+    padding: 8px;
+    //background: rgb(56, 166, 230);
+    //border: 1px rgb(122, 147, 226) solid;
+    border: 1px white solid;
+    //color: rgb(200, 248, 180);
+    color: white;
+    border-radius: 10px;
+}
