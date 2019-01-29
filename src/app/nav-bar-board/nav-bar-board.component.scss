@@ -1,0 +1,13 @@
+nav{
+    width: 100 vw;
+    height: 100px;
+    background-color: white;
+    //background: rgb(56, 166, 230);
+    background-image: url(src/assets/img/LogoGTT.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

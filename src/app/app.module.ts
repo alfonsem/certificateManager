@@ -7,13 +7,17 @@ import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+import { BoardComponent } from './board/board.component';
+import { NavBarBoardComponent } from './nav-bar-board/nav-bar-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginViewComponent,
     RegisterViewComponent,
-    NavBarComponent
+    NavBarComponent,
+    BoardComponent,
+    NavBarBoardComponent
   ],
   imports: [
     BrowserModule,
