@@ -1,9 +1,9 @@
 <app-nav-bar></app-nav-bar>
-<form>  
+<form (submit)="register()">  
   <div class="formContent">
       <input class="register" type="text" placeholder="usuario" [(ngModel)]="username" name="username" />
       <input class="register" type="text" placeholder="contraseña" [(ngModel)]="password" name="password" /> 
       <input class="register" type="text" placeholder="email" [(ngModel)]="email" name="email" />
-      <input id="registerIn" type="submit" value="registro" />
+      <input id="registerIn" type="submit" value="registro" routerLink="/login"/>
   </div>
 </form>
