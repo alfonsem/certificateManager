@@ -1,0 +1,7 @@
+{
+  "/certificateManager/*":{
+  "target": "https://localhost:5001",
+  "source": "false",
+  "changeOrigin": "true"
+  }
+}
