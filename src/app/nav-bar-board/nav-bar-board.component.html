@@ -1,19 +1,24 @@
 <nav>
   <div class="navBoardContainer">
-      <form>
-        <div class="inner-form">
-          <div class="input-field first-wrap">
-            <div class="input-select">
-              <select data-trigger="" name="choices-single-defaul">
-                <option placeholder="">Mostrar todos</option>
-                <option>Ordenar por fecha</option>
-                <option>Ordenar por organismo</option>
-              </select>
+      <div class="navContainer">
+        <div class="imageContainer"><img src="assets/img/LogoGTT.jpg" ></div>
+        <div class="loginRegisterContainer"> 
+          <form>
+            <div class="inner-form">
+              <div class="input-field first-wrap">
+                <div class="input-select">
+                        <select data-trigger="" name="choices-single-defaul">
+                          <option placeholder="">Mostrar todos</option>
+                          <option>Ordenar por fecha</option>
+                          <option>Ordenar por organismo</option>
+                        </select>
+                        <input id="logOut" type="submit" value="salir" routerLink="/login"/>
+                </div>
+              </div>
+              <div class="input-field third-wrap"></div>
             </div>
-          </div>
-          <div class="input-field third-wrap">
-          </div>
+          </form>
         </div>
-      </form>
+      </div>
   </div>
 </nav>
