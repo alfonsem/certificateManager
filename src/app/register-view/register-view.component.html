@@ -4,6 +4,8 @@
       <input class="register" type="text" placeholder="usuario" [(ngModel)]="username" name="username" />
       <input class="register" type="text" placeholder="contraseña" [(ngModel)]="password" name="password" /> 
       <input class="register" type="text" placeholder="email" [(ngModel)]="email" name="email" />
-      <input id="registerIn" type="submit" value="registro" routerLink="/login"/>
+      <input id="registerIn" type="submit" value="registro">
+      <div *ngIf="error">{{ error | json }}</div>
+      <div *ngIf="valid">Registered! <button routerLink="/login">Go to Login</button></div>
   </div>
 </form>
