@@ -11,6 +11,9 @@ import { BoardComponent } from './board/board.component';
 import { NavBarBoardComponent } from './nav-bar-board/nav-bar-board.component';
 import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CertificateComponent } from './certificate/certificate.component';
+import { ShowCertificatesComponent } from './show-certificates/show-certificates.component';
+import { DataManagerService } from './data-manager.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterViewComponent,
     NavBarComponent,
     BoardComponent,
-    NavBarBoardComponent
+    NavBarBoardComponent,
+    CertificateComponent,
+    ShowCertificatesComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ApiService],
+  providers: [DataManagerService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

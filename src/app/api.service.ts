@@ -11,7 +11,9 @@ export class ApiService {
 
   //Método para registranos usamos el método post llamando a la API
   register(username: string , password: string ){
+    console.log("HOLaaaaaaa");
     const body = {username, password};
+    console.log(username);
     return this.http.post('/api/users', body).toPromise();
   }
 }
