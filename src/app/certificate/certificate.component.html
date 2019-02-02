@@ -1,4 +1,22 @@
-<p>
-  certificate works!
-</p>
-<p>{{certificate.serialNumber}}</p>
+<section class="sectionCertificate">
+  <article>ID Organismo: {{certificate.idOrganism}}</article>
+  <article>{{certificate.alias}}</article>
+  <article>{{certificate.issuingEntity}}</article>
+  <article>Fecha de caducidad: {{certificate.expirationDate.getDate()}} / {{certificate.expirationDate.getMonth()}} / {{certificate.expirationDate.getFullYear()}}</article>
+  <article>{{certificate.clientName}}</article>
+  <article>{{certificate.contactUser}}</article>
+</section>
+
+<!-- id: number;
+    alias: string;
+    issuingEntity: string;
+    serialNumber: string;
+    subject: string;
+    expirationDate: Date;
+    password: string;
+    idOrganism: string;
+    clientName: string;
+    //integrationsList: Array<string>;
+    contactUser: string;
+    repository: string;
+    observations: string; -->
