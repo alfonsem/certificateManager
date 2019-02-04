@@ -17,4 +17,20 @@ export class LoginViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  //Método para logearnos, usamos el método de login de ApiService
+  login() {
+    const { username, password } = this;
+    if (username.trim() !== '' && password.trim() !== '') {
+      this.api
+        .login(username.trim(), password.trim())
+        .then(() => {
+          this.error = undefined;
+          this.router.navigate(['/board']);
+        })
+        .catch(error => {
+          this.error = error;
+        });
+    }
+  }
+
 }

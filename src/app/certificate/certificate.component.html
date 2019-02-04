@@ -1,10 +1,14 @@
 <section class="sectionCertificate">
   <article>ID Organismo: {{certificate.idOrganism}}</article>
   <article>{{certificate.alias}}</article>
-  <article>{{certificate.issuingEntity}}</article>
+  <article>Entidad emisora: {{certificate.issuingEntity}}</article>
+  <article>Nº Serie: {{certificate.serialNumber}}</article>
+  <article>Subject: {{certificate.subject}}</article>
   <article>Fecha de caducidad: {{certificate.expirationDate.getDate()}} / {{certificate.expirationDate.getMonth()}} / {{certificate.expirationDate.getFullYear()}}</article>
-  <article>{{certificate.clientName}}</article>
-  <article>{{certificate.contactUser}}</article>
+  <article>Cliente: {{certificate.clientName}}</article>
+  <article>Contacto: {{certificate.contactUser}}</article>
+  <article>Repositorio: {{certificate.repository}}</article>
+  <article>Observaciones: {{certificate.observations}}</article>
 </section>
 
 <!-- id: number;

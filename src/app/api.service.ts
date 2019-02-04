@@ -16,4 +16,22 @@ export class ApiService {
     console.log(username);
     return this.http.post('/api/users', body).toPromise();
   }
+
+  //Método para logearno usamos el método de la API, nos devuelve el token que necesitamos y lo
+  //guardamos en LocalStorage para ppoder utlizarlo cuando nos haga falta
+  login(username: string, password: string) {
+    const body = { username, password };
+
+    return new Promise((resolve, reject) => {
+      this.http
+        .post('/api/auth', body)
+        .toPromise()
+        .then(() => {
+          resolve(2009)
+        })
+        .catch(maybeNotAndError => {
+          console.log(maybeNotAndError);
+        });
+    });
+  }
 }
