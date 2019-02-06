@@ -14,6 +14,5 @@ export class ShowCertificatesComponent implements OnInit {
   ngOnInit() {
     console.log(JSON.stringify(this.certificates));
   }
-  
 
 }

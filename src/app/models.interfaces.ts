@@ -1,14 +1,14 @@
 export interface Certificate{
     id: number;
     alias: string;
-    issuingEntity: string;
+    issuer: string;
     serialNumber: string;
     subject: string;
-    expirationDate: Date;
+    notAfer: string;
     password: string;
     idOrganism: string;
     clientName: string;
-    //integrationsList: Array<string>;
+    integrationsList: string;
     contactUser: string;
     repository: string;
     observations: string;

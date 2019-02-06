@@ -27,7 +27,7 @@ export class RegisterViewComponent implements OnInit {
           this.error = error;
         });
     }
-    console.log(password);
+    console.log("Password: "+password);
   }
 
   ngOnInit() {

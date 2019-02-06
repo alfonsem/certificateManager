@@ -1,26 +1,10 @@
 <section class="sectionCertificate">
-  <article>ID Organismo: {{certificate.idOrganism}}</article>
-  <article>{{certificate.alias}}</article>
-  <article>Entidad emisora: {{certificate.issuingEntity}}</article>
   <article>Nº Serie: {{certificate.serialNumber}}</article>
   <article>Subject: {{certificate.subject}}</article>
-  <article>Fecha de caducidad: {{certificate.expirationDate.getDate()}} / {{certificate.expirationDate.getMonth()}} / {{certificate.expirationDate.getFullYear()}}</article>
+  <article>Fecha de caducidad: {{certificate.notAfer}}</article>
+  <article>Issuer: {{certificate.issuer}}</article>
   <article>Cliente: {{certificate.clientName}}</article>
   <article>Contacto: {{certificate.contactUser}}</article>
   <article>Repositorio: {{certificate.repository}}</article>
   <article>Observaciones: {{certificate.observations}}</article>
 </section>
-
-<!-- id: number;
-    alias: string;
-    issuingEntity: string;
-    serialNumber: string;
-    subject: string;
-    expirationDate: Date;
-    password: string;
-    idOrganism: string;
-    clientName: string;
-    //integrationsList: Array<string>;
-    contactUser: string;
-    repository: string;
-    observations: string; -->

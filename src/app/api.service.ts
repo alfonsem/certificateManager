@@ -17,7 +17,7 @@ export class ApiService {
     return this.http.post('/api/users', body).toPromise();
   }
 
-  //Método para logearno usamos el método de la API, nos devuelve el token que necesitamos y lo
+  //Método para logearnos usamos el método de la API, nos devuelve el token que necesitamos y lo
   //guardamos en LocalStorage para ppoder utlizarlo cuando nos haga falta
   login(username: string, password: string) {
     const body = { username, password };
@@ -27,11 +27,16 @@ export class ApiService {
         .post('/api/auth', body)
         .toPromise()
         .then(() => {
-          resolve(2009)
+          resolve(200)
         })
         .catch(maybeNotAndError => {
           console.log(maybeNotAndError);
         });
     });
+  }
+
+  //Método para recibir todas los certificados que tenemos en la API
+  getCertificates(): any {
+    return this.http.get('/api/certificates').toPromise();
   }
 }
