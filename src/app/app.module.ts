@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CertificateComponent } from './certificate/certificate.component';
 import { ShowCertificatesComponent } from './show-certificates/show-certificates.component';
 import { DataManagerService } from './data-manager.service';
+import { UpCertificateViewComponent } from './up-certificate-view/up-certificate-view.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DataManagerService } from './data-manager.service';
     BoardComponent,
     NavBarBoardComponent,
     CertificateComponent,
-    ShowCertificatesComponent
+    ShowCertificatesComponent,
+    UpCertificateViewComponent
   ],
   imports: [
     BrowserModule,

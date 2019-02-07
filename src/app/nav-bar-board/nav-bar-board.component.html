@@ -3,6 +3,7 @@
       <div class="navContainer">
         <div class="imageContainer"><img src="assets/img/LogoGTT.jpg" ></div>
         <div class="loginRegisterContainer"> 
+            <p>{{image}}</p>
           <form>
             <div class="inner-form">
               <div class="input-field first-wrap">
@@ -12,6 +13,7 @@
                           <option>Ordenar por fecha</option>
                           <option>Ordenar por organismo</option>
                         </select>
+                        <input  id="chooseFile" type="file" accept=".p12" (change)="changeListener($event)">
                         <input id="logOut" type="submit" value="salir" routerLink="/login"/>
                 </div>
               </div>

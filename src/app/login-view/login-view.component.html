@@ -2,7 +2,7 @@
 <form (submit)="login()">  
   <div class="formContent">
       <input class="login" type="text" placeholder="usuario" [(ngModel)]="username" name="username" />
-      <input class="login" type="text" placeholder="contraseña" [(ngModel)]="password" name="password" /> 
+      <input class="login" type="password" placeholder="contraseña" [(ngModel)]="password" name="password" (keyup.enter)="login()"/> 
       <input id="loginIn" type="submit" value="entrar">
   </div>
 </form>

@@ -39,4 +39,16 @@ export class ApiService {
   getCertificates(): any {
     return this.http.get('/api/certificates').toPromise();
   }
+
+  upCertficate(file64: string){
+    // public long id { get; set; }
+    //     public string serialNumber { get; set; }
+    //     public string subject { get; set; }
+    //     public string notAfer { get; set; }
+    //     public string issuer { get; set; }
+    //     public string file64 { get; set; }
+
+    const body = {file64};
+    return this.http.post('/api/certificates', body).toPromise();
+  }
 }

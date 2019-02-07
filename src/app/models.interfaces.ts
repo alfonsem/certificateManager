@@ -12,4 +12,5 @@ export interface Certificate{
     contactUser: string;
     repository: string;
     observations: string;
+    file64: string;
 }
