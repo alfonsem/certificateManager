@@ -11,6 +11,7 @@ export class LoginViewComponent implements OnInit {
   username: string;
   password: string;
   error: any;
+  exist: boolean = true;
 
   constructor( private api: ApiService, private router: Router) { }
 

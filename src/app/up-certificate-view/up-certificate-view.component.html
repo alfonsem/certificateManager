@@ -1,10 +1,12 @@
 <app-nav-bar-board></app-nav-bar-board>
-<form>
+<form (submit)="uploadCertificate()">
     <section class="sectionUpCertificate">
+        <input  id="chooseFile" type="file" accept=".p12" (change)="changeListener($event)">
         <article>Alias:</article>
         <article>Nombre del cliente:</article>
         <article>Email:</article>
         <article>Observaciones:</article>
+        <textarea rows="20" cols="60">{{image}}</textarea>
       </section>
       <section>
           <input id="certificateUp" type="submit" value="cargar">

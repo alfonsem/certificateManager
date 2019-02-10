@@ -32,7 +32,7 @@ import { UpCertificateViewComponent } from './up-certificate-view/up-certificate
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [DataManagerService, ApiService],
   bootstrap: [AppComponent]

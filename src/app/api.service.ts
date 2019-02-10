@@ -11,14 +11,11 @@ export class ApiService {
 
   //Método para registranos usamos el método post llamando a la API
   register(username: string , password: string ){
-    console.log("HOLaaaaaaa");
     const body = {username, password};
-    console.log(username);
     return this.http.post('/api/users', body).toPromise();
   }
 
-  //Método para logearnos usamos el método de la API, nos devuelve el token que necesitamos y lo
-  //guardamos en LocalStorage para ppoder utlizarlo cuando nos haga falta
+  //Método para logearnos usamos el método de la API
   login(username: string, password: string) {
     const body = { username, password };
 
