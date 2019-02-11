@@ -1,14 +1,26 @@
 <app-nav-bar-board></app-nav-bar-board>
-<form (submit)="uploadCertificate()">
-    <section class="sectionUpCertificate">
-        <input  id="chooseFile" type="file" accept=".p12" (change)="changeListener($event)">
-        <article>Alias:</article>
-        <article>Nombre del cliente:</article>
-        <article>Email:</article>
-        <article>Observaciones:</article>
-        <textarea rows="20" cols="60">{{image}}</textarea>
-      </section>
-      <section>
-          <input id="certificateUp" type="submit" value="cargar">
-      </section>
-</form>
+<section id="sectionCert">
+    <form (submit)="uploadCertificate()">
+        <section class="sectionUpCertificate">
+            <article>
+                <input class="login" type="text" placeholder="Alias" [(ngModel)]="alias" name="alias" />
+            </article>
+            <article>
+                <input class="login" type="text" placeholder="Nombre del cliente" [(ngModel)]="nomCliente" name="nomCliente" />
+            </article>
+            <article>
+                <input class="login" type="text" placeholder="Email" [(ngModel)]="email" name="email" />
+            </article>
+            <article>Observaciones:
+                <textarea rows="15" cols="65"></textarea>
+            </article>
+            <!-- <textarea rows="20" cols="60">{{image}}</textarea> -->
+          </section>
+          <article>
+            <input  id="chooseFile" type="file" accept=".p12" (change)="changeListener($event)">
+          </article>
+          <article>
+            <input id="certificateUp" type="submit" value="cargar">
+          </article>
+    </form>
+</section>

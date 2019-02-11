@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service'
+import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-up-certificate-view',
@@ -9,12 +11,13 @@ import { ApiService } from '../api.service'
 export class UpCertificateViewComponent implements OnInit {
   error: any;
   valid: any;
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private router: Router) {}
 
   ngOnInit() {
   }
 
   image: any;
+  new_image: any;
 
   changeListener($event) : void {
   this.readThis($event.target);
@@ -25,6 +28,7 @@ export class UpCertificateViewComponent implements OnInit {
   
     myReader.onloadend = (e) => {
       this.image = myReader.result;
+      this.new_image = this.image.replace("data:application/x-pkcs12;base64,", "");
       console.log(myReader.result);
     }
     myReader.readAsDataURL(file);
@@ -34,9 +38,10 @@ export class UpCertificateViewComponent implements OnInit {
     const { image } = this;
     if (image !== '') {
       this.api
-        .upCertficate(image)
+        .upCertficate(this.new_image)
         .then(res => {
           this.valid = res;
+          this.router.navigate(['/board']);
         })
         .catch(error => {
           this.error = error;

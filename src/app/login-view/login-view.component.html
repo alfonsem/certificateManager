@@ -4,6 +4,6 @@
       <input class="login" type="text" placeholder="usuario" [(ngModel)]="username" name="username" />
       <input class="login" type="password" placeholder="contraseña" [(ngModel)]="password" name="password" (keyup.enter)="login()"/> 
       <input id="loginIn" type="submit" value="entrar">
-      <span [hidden]="exist">Este usuario no existe</span>
+      <span *ngIf="res">Este usuario existe</span>
   </div>
 </form>
