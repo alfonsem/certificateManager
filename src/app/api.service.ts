@@ -37,15 +37,9 @@ export class ApiService {
     return this.http.get('/api/certificates').toPromise();
   }
 
-  upCertficate(file64: string){
-    // public long id { get; set; }
-    //     public string serialNumber { get; set; }
-    //     public string subject { get; set; }
-    //     public string notAfer { get; set; }
-    //     public string issuer { get; set; }
-    //     public string file64 { get; set; }
+  upCertficate(file64: string, alias: string, nomCLiente: string, repositorio: string, observaciones: string){
 
-    const body = {file64};
+    const body = {file64, alias, nomCLiente, repositorio, observaciones};
     return this.http.post('/api/certificates', body).toPromise();
   }
 }

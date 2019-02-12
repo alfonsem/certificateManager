@@ -48,7 +48,6 @@ export class DataManagerService {
 
   getData(){
     this.loadDataFromBackend();
-    console.log(JSON.stringify(this.data));
     return this.data;
   }
 
@@ -62,12 +61,16 @@ export class DataManagerService {
           serialNumber: rawCertificate.serialNumber,
           notAfer: rawCertificate.notAfer,
           subject: rawCertificate.subject,
-          issuer: rawCertificate.issuer
+          issuer: rawCertificate.issuer,
+          alias: rawCertificate.alias,
+          nomCliente: rawCertificate.nomCliente,
+          repositorio: rawCertificate.repositorio,
+          observaciones: rawCertificate.observaciones
         }));
         Promise.all(
           certificates.map(async (certificate: Certificate) => {
             return certificate;
-          }),
+          })
         ).then(certificates => {
           this.data.certificates = certificates;
         });

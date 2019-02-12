@@ -16,6 +16,10 @@ export class UpCertificateViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  alias: any;
+  nomCLiente: any;
+  repositorio: any;
+  observaciones: any;
   image: any;
   new_image: any;
 
@@ -35,10 +39,10 @@ export class UpCertificateViewComponent implements OnInit {
   }
 
   uploadCertificate(){
-    const { image } = this;
+    const { image, alias, nomCliente, repositorio, observaciones } = this;
     if (image !== '') {
       this.api
-        .upCertficate(this.new_image)
+        .upCertficate(this.new_image, alias, nomCliente, repositorio, observaciones)
         .then(res => {
           this.valid = res;
           this.router.navigate(['/board']);
