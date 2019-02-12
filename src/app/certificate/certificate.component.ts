@@ -13,8 +13,6 @@ export class CertificateComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    //console.log("Hola certificate" + JSON.stringify(this.certificate));
-    console.log(this.certificate.alias);
   }
 
 }

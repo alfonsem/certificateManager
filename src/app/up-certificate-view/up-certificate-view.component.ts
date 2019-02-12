@@ -16,10 +16,10 @@ export class UpCertificateViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  alias: any;
-  nomCLiente: any;
-  repositorio: any;
-  observaciones: any;
+  alias: string;
+  nomCliente: string;
+  repositorio: string;
+  observaciones: string;
   image: any;
   new_image: any;
 
@@ -42,7 +42,7 @@ export class UpCertificateViewComponent implements OnInit {
     const { image, alias, nomCliente, repositorio, observaciones } = this;
     if (image !== '') {
       this.api
-        .upCertficate(this.new_image, alias, nomCliente, repositorio, observaciones)
+        .upCertficate(this.new_image, this.alias, this.nomCliente, this.repositorio, this.observaciones)
         .then(res => {
           this.valid = res;
           this.router.navigate(['/board']);

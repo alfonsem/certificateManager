@@ -10,8 +10,8 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   //Método para registranos usamos el método post llamando a la API
-  register(username: string , password: string ){
-    const body = {username, password};
+  register(username: string , password: string, admin: boolean ){
+    const body = {username, password, admin};
     return this.http.post('/api/users', body).toPromise();
   }
 

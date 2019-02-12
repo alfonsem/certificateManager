@@ -23,7 +23,6 @@ export class NavBarBoardComponent implements OnInit {
   
     myReader.onloadend = (e) => {
       this.image = myReader.result;
-      console.log(myReader.result);
     }
     myReader.readAsDataURL(file);
   }

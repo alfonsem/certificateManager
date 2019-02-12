@@ -65,7 +65,7 @@ export class DataManagerService {
           alias: rawCertificate.alias,
           nomCliente: rawCertificate.nomCliente,
           repositorio: rawCertificate.repositorio,
-          observaciones: rawCertificate.observaciones
+          observaciones: rawCertificate.observaciones,
         }));
         Promise.all(
           certificates.map(async (certificate: Certificate) => {
