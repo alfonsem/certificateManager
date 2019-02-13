@@ -15,6 +15,7 @@ import { CertificateComponent } from './certificate/certificate.component';
 import { ShowCertificatesComponent } from './show-certificates/show-certificates.component';
 import { DataManagerService } from './data-manager.service';
 import { UpCertificateViewComponent } from './up-certificate-view/up-certificate-view.component';
+import { JiraComponent } from './jira/jira.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UpCertificateViewComponent } from './up-certificate-view/up-certificate
     NavBarBoardComponent,
     CertificateComponent,
     ShowCertificatesComponent,
-    UpCertificateViewComponent
+    UpCertificateViewComponent,
+    JiraComponent
   ],
   imports: [
     BrowserModule,

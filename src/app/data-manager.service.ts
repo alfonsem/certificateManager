@@ -56,7 +56,7 @@ export class DataManagerService {
     this.api
       .getCertificates()
       .then((rawCertificates: Array<any>) => {
-        console.log(rawCertificates);
+        console.log(JSON.stringify(rawCertificates));
         const certificates = rawCertificates.map(rawCertificate => ({
           serialNumber: rawCertificate.serialNumber,
           notAfer: rawCertificate.notAfer,
@@ -76,6 +76,6 @@ export class DataManagerService {
         });
       })
       .catch(() => this.router.navigate(['/login']));
-      console.log(JSON.stringify(this.data));
+      console.log(JSON.stringify(this.data.certificates));
   }
 }

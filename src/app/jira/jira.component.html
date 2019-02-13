@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+<section id="sectionJira">
+    <form>
+        <section class="sectionUpJira">
+          <article>
+            <h1>Formulario JIRA</h1>
+          </article>
+            <article>
+                <input class="login" type="text" placeholder="Usuario" [(ngModel)]="usuario" name="usuario" />
+            </article>
+            <article>
+                <input class="login" type="text" placeholder="password" [(ngModel)]="password" name="password" />
+            </article>
+            <article>
+                <input class="login" type="text" placeholder="Componente" [(ngModel)]="componente" name="componente" />
+            </article>
+            <article>Descripción:
+                <textarea rows="10" cols="65" [(ngModel)]="descripcion" name="descripcion"></textarea>
+            </article>
+          </section>
+          <article>
+            <input id="certificateUp" type="submit" value="Alta ticket">
+            <input id="certificateClose" type="submit" value="Cerrar" routerLink="/board">
+          </article>
+    </form>
+</section>

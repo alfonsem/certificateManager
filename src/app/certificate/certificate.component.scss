@@ -7,10 +7,26 @@
     min-width: 300px;
     min-height: 200px;
 }
-article{
+.campo{
     border: rgb(86, 224, 93) 1px solid;
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
     background-color: rgb(194, 235, 196);
+}
+#certificateJira{
+    border: none;
+    border-radius: 5px;
+    background: rgb(86, 224, 93);
+    color: white;
+    font-size: 1em;
+    margin-top: 5px;
+    padding: 5px;
+}
+.material-icons{
+    // border: rgb(86, 224, 93) 1px solid;
+    // border-radius: 5px;
+    // padding: 5px;
+    color: rgb(86, 224, 93);
+    font-size: 2.5em;
 }

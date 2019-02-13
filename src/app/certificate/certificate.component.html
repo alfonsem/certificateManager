@@ -1,10 +1,18 @@
 <section class="sectionCertificate">
-  <article>Nº Serie: {{certificate.serialNumber}}</article>
-  <article>Subject: {{certificate.subject}}</article>
-  <article>Fecha de caducidad: {{certificate.notAfer}}</article>
-  <article>Issuer: {{certificate.issuer}}</article>
-  <article>Cliente: {{certificate.alias}}</article>
-  <article>Contacto: {{certificate.nomCliente}}</article>
-  <article>Repositorio: {{certificate.repositorio}}</article>
-  <article>Observaciones: {{certificate.observaciones}}</article>
+    <article>
+        <i class="material-icons">
+            cloud_download
+            </i>
+      </article>
+  <article class="campo" >Nº Serie: {{certificate.serialNumber}}</article>
+  <article class="campo" >Subject: {{certificate.subject}}</article>
+  <article class="campo" >Fecha de caducidad: {{certificate.notAfer.split(" ", 1)}}</article>
+  <article class="campo" >Issuer: {{certificate.issuer}}</article>
+  <article class="campo" >Cliente: {{certificate.alias}}</article>
+  <article class="campo" >Contacto: {{certificate.nomCliente}}</article>
+  <article class="campo" >Repositorio: {{certificate.repositorio}}</article>
+  <article class="campo" >Observaciones: {{certificate.observaciones}}</article>
+  <article>
+    <input id="certificateJira" type="submit" value="JIRA" routerLink="/jira">
+  </article>
 </section>
