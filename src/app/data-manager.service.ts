@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Certificate } from './models.interfaces';
+import { User } from './models.interfaces';
 import { ApiService } from './api.service';
 import { Router } from '@angular/router';
 
@@ -46,6 +47,12 @@ export class DataManagerService {
     ]
   }
 
+  data2: {
+    users: Array < User >
+  } = {
+    users: []
+  }
+
   getData(){
     this.loadDataFromBackend();
     return this.data;
@@ -77,5 +84,32 @@ export class DataManagerService {
       })
       .catch(() => this.router.navigate(['/login']));
       console.log(JSON.stringify(this.data.certificates));
+  }
+
+  loadUsersFromBackend() {
+    this.api
+      .getUsers()
+      .then((rawUsers: Array<any>) => {
+        console.log(JSON.stringify(rawUsers));
+        const users = rawUsers.map(rawUser => ({
+          id: rawUser.id,
+          username: rawUser.username,
+          password: rawUser.password,
+        }));
+        Promise.all(
+          users.map(async (user: User) => {
+            return user;
+          })
+        ).then(users => {
+          this.data2.users = users;
+        });
+      })
+      .catch(() => this.router.navigate(['/login']));
+      console.log(JSON.stringify(this.data.certificates));
+  }
+
+  getUsers(){
+    this.loadUsersFromBackend();
+    return this.data2;
   }
 }

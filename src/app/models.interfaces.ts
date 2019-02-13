@@ -9,3 +9,10 @@ export interface Certificate{
     repositorio: string;
     observaciones: string;
 }
+
+export interface User{
+    id: number;
+    username: string;
+    password: string;
+    admin: string;
+}

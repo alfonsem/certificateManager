@@ -9,11 +9,13 @@ import { Data } from '@angular/router';
 })
 export class BoardComponent implements OnInit {
   data: Data;
+  
 
   constructor(private dataManager: DataManagerService) { }
 
   ngOnInit() {
     this.data = this.dataManager.getData();
+    console.log(JSON.stringify(this.data));
   }
 
 }

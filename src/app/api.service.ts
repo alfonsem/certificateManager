@@ -37,9 +37,19 @@ export class ApiService {
     return this.http.get('/api/certificates').toPromise();
   }
 
+  getUsers(): any {
+    return this.http.get('/api/users').toPromise();
+  }
+
   upCertficate(file64: string, alias: string, nomCLiente: string, repositorio: string, observaciones: string){
 
     const body = {file64, alias, nomCLiente, repositorio, observaciones};
     return this.http.post('/api/certificates', body).toPromise();
+  }
+
+  upJira (userJira: string, passwordJira: string, componentJira: string, descriptionJira: string){
+
+    const body = {userJira, passwordJira, componentJira, descriptionJira};
+    return this.http.post('/api/jira', body).toPromise();
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jira',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JiraComponent implements OnInit {
 
-  constructor( ) { }
+  userJira: string;
+  passwordJira: string;
+  componentJira: string;
+  descriptionJira: string;
+  error: any;
+  valid: any;
+  constructor(private api: ApiService, private router: Router) {}
 
   ngOnInit() {
+  }
+
+  uploadJira(){
+    const { userJira, passwordJira, componentJira, descriptionJira } = this;
+    if (userJira!=='' && passwordJira!=='' && componentJira!=='' && descriptionJira!=='') {
+      this.api
+        .upJira(userJira, passwordJira, componentJira, descriptionJira)
+        .then(res => {
+          this.valid = res;
+          this.router.navigate(['/board']);
+        })
+        .catch(error => {
+          this.error = error;
+        });
+    }
   }
 
 }
