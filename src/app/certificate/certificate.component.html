@@ -1,13 +1,12 @@
 <section class="sectionCertificate">
     <article>
-        <i class="material-icons" (click)="dowloadFile()">
-            cloud_download
-            </i>
-      </article>
+      <!-- <i class="material-icons" (click)="dowloadFile()">cloud_download</i> -->
+      <i class="material-icons">cloud_download</i>
+    </article>
   <article class="campo" >Nº Serie: {{certificate.serialNumber}}</article>
-  <article class="campo" >Subject: {{certificate.subject}}</article>
+  <article class="campo" >Subject: {{certificate.subject.split(",")[1]}}</article>
   <article class="campo" >Fecha de caducidad: {{certificate.notAfer.split(" ", 1)}}</article>
-  <article class="campo" >Issuer: {{certificate.issuer}}</article>
+  <article class="campo" >Issuer: {{certificate.issuer.split(",")[1]}}</article>
   <article class="campo" >Cliente: {{certificate.alias}}</article>
   <article class="campo" >Contacto: {{certificate.nomCliente}}</article>
   <article class="campo" >Repositorio: {{certificate.repositorio}}</article>

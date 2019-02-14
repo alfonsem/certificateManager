@@ -17,7 +17,8 @@ export class CertificateComponent implements OnInit {
 
   dowloadFile() {
     
-    let certificateType = this.certificate.subject.split('.')[1];
+    //let certificateType = this.certificate.subject.split('.')[1];
+    let certificateType = "certificado";
     var contentType = "file/"+certificateType;
     var byteCharacters = atob(this.certificate.file64);
     var byteNumbers = new Array(byteCharacters.length);
