@@ -10,6 +10,8 @@
           <option value="false">Usuario</option>
         </select>
       </article>
+      <p [hidden]="!exist">Este usuario ya existe</p>
+      <p [hidden]="!errorField">No puedes dejar un campo vacío</p>
       <input id="registerIn" type="submit" value="registro">
       <div *ngIf="error">{{ error | json }}</div>
       <!-- <div *ngIf="valid">Registered! <button routerLink="/login">Go to Login</button></div> -->

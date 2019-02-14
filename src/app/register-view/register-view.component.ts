@@ -3,7 +3,6 @@ import { ApiService } from '../api.service';
 import { DataManagerService } from '../data-manager.service';
 import { Router } from '@angular/router';
 import { Data } from '@angular/router';
-import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-register-view',
@@ -18,6 +17,8 @@ export class RegisterViewComponent implements OnInit {
   password: string;
   singleSelect: string;
   admin: boolean;
+  exist: boolean = false;
+  errorField: boolean = false;
   error: any;
   valid: any;
   
@@ -26,6 +27,18 @@ export class RegisterViewComponent implements OnInit {
   ngOnInit() {
     this.data2 = this.dataManager.getUsers();
     console.log("register data"+JSON.stringify(this.data2));
+  }
+
+  isExists(){
+    const { username, password, admin } = this;
+    for (let i=0; i<this.data2.users.length; i++){
+      if(username.trim() == this.data2.users[i].username){
+        this.exist = true;
+        return true;
+      }
+    }
+    this.exist = false;
+    return false;
   }
 
   //Método para registrarnos usando el método de register de ApiService
@@ -37,36 +50,24 @@ export class RegisterViewComponent implements OnInit {
     }
     const { username, password, admin } = this;
 
-    // this.data2.users.forEach(element => {
-    //   if(username.trim() == element.username){
-    //     this.router.navigate(['/login']);
-    //   }else{
-    //     if (username.trim() !== '' && password.trim() !== '') {
-    //       this.api
-    //         .register(username.trim(), password.trim(), admin)
-    //         .then(res => {
-    //           this.valid = res;
-    //           this.router.navigate(['/board']);
-    //           console.log(this.singleSelect);
-    //         })
-    //         .catch(error => {
-    //           this.error = error;
-    //         });
-    //     }
-    //   }
-    // });
-
-    if (username.trim() !== '' && password.trim() !== '') {
-      this.api
-        .register(username.trim(), password.trim(), admin)
-        .then(res => {
-          this.valid = res;
-          this.router.navigate(['/board']);
-          console.log(this.singleSelect);
-        })
-        .catch(error => {
-          this.error = error;
-        });
+    console.log("Existe" + this.data2.users[0].username);
+    try{
+      if(!this.isExists()){
+        if (username.trim() !== '' && password.trim() !== '') {
+        this.api
+          .register(username.trim(), password.trim(), admin)
+          .then(res => {
+            this.valid = res;
+            this.router.navigate(['/board']);
+            console.log(this.singleSelect);
+          })
+          .catch(error => {
+            this.error = error;
+          });
+        }
+      }
+    }catch{
+      this.errorField = true;
     }
   }
 
