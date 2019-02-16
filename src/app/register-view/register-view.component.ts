@@ -58,7 +58,8 @@ export class RegisterViewComponent implements OnInit {
           .register(username.trim(), password.trim(), admin)
           .then(res => {
             this.valid = res;
-            this.router.navigate(['/board']);
+            var role: string = localStorage.getItem('role');
+            this.router.navigate(['/board', role]);
             console.log(this.singleSelect);
           })
           .catch(error => {

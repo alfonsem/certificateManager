@@ -35,7 +35,7 @@ export class LoginViewComponent implements OnInit {
         }
       }
       this.exist = false;
-    return false;
+      return false;
     }
     
   }
@@ -51,10 +51,12 @@ export class LoginViewComponent implements OnInit {
           if(this.isAdmin()==true) {
             console.log("Soy administrador");
             this.adminLunch.emit({admin: this.admin});
+            localStorage.setItem('role', 'administrador');
             this.router.navigate(['/board','administrador']);
           }else{
             console.log("No soy administrador");
             this.adminLunch.emit({admin: this.admin});
+            localStorage.setItem('role', 'usuario');
             this.router.navigate(['/board','usuario']);
           }
         })
