@@ -9,6 +9,7 @@ import { JiraComponent } from './jira/jira.component';
 const routes: Routes = [
   {path: 'login', component: LoginViewComponent},
   {path: 'register', component: RegisterViewComponent},
+  {path: 'board/:admin', component: BoardComponent},
   {path: 'board', component: BoardComponent},
   {path: 'certificate-view', component: UpCertificateViewComponent},
   {path: 'jira', component: JiraComponent},

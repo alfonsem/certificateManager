@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar-board',
@@ -6,24 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar-board.component.scss']
 })
 export class NavBarBoardComponent implements OnInit {
+  admin:boolean;
 
-  constructor() { }
+  constructor(private rutaActiva: ActivatedRoute) { }
 
   ngOnInit() {
+    this.admin = this.rutaActiva.snapshot.params.admin;
+    this.isAdmin();
   }
-
-  image;
-
-  changeListener($event) : void {
-  this.readThis($event.target);
-  }
-  readThis(inputValue: any): void {
-    var file:File = inputValue.files[0];
-    var myReader:FileReader = new FileReader();
-  
-    myReader.onloadend = (e) => {
-      this.image = myReader.result;
+  isAdmin(){
+    if(this.rutaActiva.snapshot.params.admin == 'administrador'){
+      this.admin = true;
+      return true;
     }
-    myReader.readAsDataURL(file);
+    this.admin = false;
+    return false;
+
   }
 }
