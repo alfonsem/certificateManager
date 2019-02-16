@@ -5,7 +5,7 @@ Está realizado como actividad didáctica, consiste en un frontend con Angular (
 ## Objetivos
 
 - Gestión de una arquitectura avanzada en frontend
-- Gestión de distintos roles de usuario
+- Gestión de distintos roles de usuario, se mostrarán distintos componentes para cada role
 - Conexión y creación de una API REST
 - Leer y obtener datos de certificados digitales
 - Almacenar datos en BBDD con PostgreSQL
