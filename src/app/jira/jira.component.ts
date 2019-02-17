@@ -27,7 +27,8 @@ export class JiraComponent implements OnInit {
         .upJira(userJira, passwordJira, componentJira, descriptionJira)
         .then(res => {
           this.valid = res;
-          this.router.navigate(['/board']);
+          var role: string = localStorage.getItem('role');
+          this.router.navigate(['/board', role]);
         })
         .catch(error => {
           this.error = error;

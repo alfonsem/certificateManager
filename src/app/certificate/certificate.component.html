@@ -11,6 +11,7 @@
   <article class="campo" >Repositorio: {{certificate.repositorio}}</article>
   <article class="campo" >Observaciones: {{certificate.observaciones}}</article>
   <article>
+    <p [hidden]="!timeOut">El certificado está caducado</p>
     <input id="certificateJira" type="submit" value="JIRA" routerLink="/jira">
   </article>
 </section>

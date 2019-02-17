@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Certificate } from '../models.interfaces';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-certificate',
@@ -7,12 +8,23 @@ import { Certificate } from '../models.interfaces';
   styleUrls: ['./certificate.component.scss']
 })
 export class CertificateComponent implements OnInit {
+  date = new Date();
+  fecha: string;
+  fecha2: string;
+  timeOut: boolean  = false;
 
   @Input() certificate: Certificate;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.certificate.notAfer.split(" ", 1).toString());
+    console.log(this.date.toLocaleString().split(" ", 1).toString());
+    if(this.fecha2 < this.fecha){
+      this.timeOut = false;
+    } else{
+      this.timeOut = true;
+    }
   }
 
   dowloadFile() {

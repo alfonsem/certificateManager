@@ -26,7 +26,6 @@ export class RegisterViewComponent implements OnInit {
 
   ngOnInit() {
     this.data2 = this.dataManager.getUsers();
-    console.log("register data"+JSON.stringify(this.data2));
   }
 
   isExists(){
@@ -49,8 +48,6 @@ export class RegisterViewComponent implements OnInit {
       this.admin = false;
     }
     const { username, password, admin } = this;
-
-    console.log("Existe" + this.data2.users[0].username);
     try{
       if(!this.isExists()){
         if (username.trim() !== '' && password.trim() !== '') {

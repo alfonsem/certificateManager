@@ -13,38 +13,7 @@ export class DataManagerService {
   data: {
     certificates: Array < Certificate >
   } = {
-    certificates: [
-      // {
-      //   id: 1,
-      //   alias: 'alias 1',
-      //   issuingEntity: 'entity 1',
-      //   serialNumber: 'serial 1',
-      //   subject: 'subject 1',
-      //   expirationDate: '',
-      //   password: 'password',
-      //   idOrganism: 'organism',
-      //   clientName: 'client',
-      //   integrationsList: "",
-      //   contactUser: 'contact',
-      //   repository: 'repository',
-      //   observations: 'observations'
-      // },
-      // {
-      //   id: 2,
-      //   alias: 'alias 2',
-      //   issuingEntity: 'entity 2',
-      //   serialNumber: 'serial 2',
-      //   subject: 'subject 2',
-      //   expirationDate: '',
-      //   password: 'password',
-      //   idOrganism: 'organism',
-      //   clientName: 'client',
-      //   integrationsList: "",
-      //   contactUser: 'contact',
-      //   repository: 'repository',
-      //   observations: 'observations'
-      // },
-    ]
+    certificates: []
   }
 
   data2: {
@@ -63,7 +32,6 @@ export class DataManagerService {
     this.api
       .getCertificates()
       .then((rawCertificates: Array<any>) => {
-        console.log(JSON.stringify(rawCertificates));
         const certificates = rawCertificates.map(rawCertificate => ({
           serialNumber: rawCertificate.serialNumber,
           notAfer: rawCertificate.notAfer,
@@ -83,14 +51,12 @@ export class DataManagerService {
         });
       })
       .catch(() => this.router.navigate(['/login']));
-      console.log(JSON.stringify(this.data.certificates));
   }
 
   loadUsersFromBackend() {
     this.api
       .getUsers()
       .then((rawUsers: Array<any>) => {
-        console.log(JSON.stringify(rawUsers));
         const users = rawUsers.map(rawUser => ({
           id: rawUser.id,
           username: rawUser.username,
@@ -105,7 +71,6 @@ export class DataManagerService {
         });
       })
       .catch(() => this.router.navigate(['/login']));
-      console.log(JSON.stringify(this.data.certificates));
   }
 
   getUsers(){
