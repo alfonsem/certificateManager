@@ -45,7 +45,8 @@ export class UpCertificateViewComponent implements OnInit {
         .upCertficate(this.new_image, this.alias, this.nomCliente, this.repositorio, this.observaciones)
         .then(res => {
           this.valid = res;
-          this.router.navigate(['/board']);
+          var role: string = localStorage.getItem('role');
+          this.router.navigate(['/board', role]);
         })
         .catch(error => {
           this.error = error;
