@@ -50,8 +50,15 @@ export class UpCertificateViewComponent implements OnInit {
         })
         .catch(error => {
           this.error = error;
+          var role: string = localStorage.getItem('role');
+          this.router.navigate(['/board', role]);
         });
     }
+  }
+
+  close(){
+    var role: string = localStorage.getItem('role');
+    this.router.navigate(['/board', role]);
   }
 
 }
